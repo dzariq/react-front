@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
+    "proxy": "http://localhost:3200",
     "scripts": {
         "start": "nodemon index.js"
     },
