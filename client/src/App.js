@@ -18,6 +18,7 @@ class App extends Component {
         this.refreshUsers()
     }
 
+
     async refreshUsers() {
         fetch(this.api_url+'/users')
                 .then((res) => res.json())
