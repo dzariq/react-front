@@ -2,12 +2,14 @@ const express = require("express");
 const mongo = require("mongodb").MongoClient;
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors");
 
 
 const port = 3200;
 
 const app = express();
-app.use(express.static(path.join(__dirname,'/../client/build')));
+//app.use(express.static(path.join(__dirname,'/../client/build')));
+app.use(cors())
 
 var pass = encodeURIComponent("Mirz@851205");
 var CONN = "mongodb+srv://dzariq:" + pass + "@cluster0.4yossos.mongodb.net/?retryWrites=true&w=majority";

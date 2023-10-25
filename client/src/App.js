@@ -10,6 +10,7 @@ class App extends Component {
         this.state = {
             users: []
         }
+        this.api_url = 'http://localhost:3200';
     }
 
     //init
@@ -18,31 +19,37 @@ class App extends Component {
     }
 
     async refreshUsers() {
-        fetch('/users')
+        fetch(this.api_url+'/users')
                 .then((res) => res.json())
                 .then((data) => this.setState({users: data}));
     }
 
     async addClick() {
-       var userName = document.getElementById('userName').value;
-       const data = new FormData();
-       
-       data.append("name",userName);
-       
-        fetch('/add',{
-            method : 'POST',
-            body : data
+        var userName = document.getElementById('userName').value;
+        const data = new FormData();
+
+        data.append("name", userName);
+
+        fetch(this.api_url+'/add', {
+            method: 'POST',
+            body: data
         })
                 .then((res) => res.json())
-                .then((res) => {alert(res); this.refreshUsers()});
+                .then((res) => {
+                    alert(res);
+                    this.refreshUsers()
+                });
     }
 
     async deleteClick(id) {
-        fetch('/delete?user_id='+id,{
-            method : 'DELETE'
+        fetch(this.api_url+'/delete?user_id=' + id, {
+            method: 'DELETE'
         })
                 .then((res) => res.json())
-                .then((res) => {alert(res); this.refreshUsers()});
+                .then((res) => {
+                    alert(res);
+                    this.refreshUsers()
+                });
     }
 
     render() {
