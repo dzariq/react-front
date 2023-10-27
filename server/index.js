@@ -8,7 +8,6 @@ var bodyParser = require('body-parser')
 const port = 3200;
 
 const app = express();
-require('./app/routes/user.routes')(app);
 
 //app.use(express.static(path.join(__dirname,'/../client/build')));
 app.use(cors());
@@ -16,6 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+require('./app/routes/user.routes')(app);
+
 var pass = encodeURIComponent("Mirz@851205");
 var CONN = "mongodb+srv://dzariq:" + pass + "@cluster0.4yossos.mongodb.net/?retryWrites=true&w=majority";
 var DB = 'badanamu';
