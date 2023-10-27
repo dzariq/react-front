@@ -22,7 +22,7 @@ app.get('/users', (req, res) => {
     });
 });
 
-app.post('/add', multer().none(), (req, res) => {
+app.post('/add',  (req, res) => {
     database.collection("user").count({}, function (error, numDocs) {
         database.collection("user").insertOne({
             user_id: (numDocs + 1).toString(),
