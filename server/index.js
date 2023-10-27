@@ -1,4 +1,5 @@
 const express = require("express");
+const router = express.Router();
 const mongo = require("mongodb").MongoClient;
 const multer = require("multer");
 const path = require("path");
@@ -15,6 +16,8 @@ var CONN = "mongodb+srv://dzariq:" + pass + "@cluster0.4yossos.mongodb.net/?retr
 var DB = 'badanamu';
 var database;
 let db = null;
+
+
 
 app.get('/users', (req, res) => {
     database.collection("user").find({}).toArray((error, result) => {
