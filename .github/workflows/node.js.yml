@@ -19,7 +19,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: |
         yarn install
-        yarn workspace client install
         yarn workspace server install
         yarn start
         pm2 stop 0
