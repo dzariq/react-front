@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import { Component } from 'react';
+import Home from './components/Home';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import {BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 
 class App extends Component {
 
