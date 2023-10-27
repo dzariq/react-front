@@ -5,8 +5,7 @@
     "license": "MIT",
     "private": true,
     "workspaces": [
-        "server",
-        "client"
+        "server"
     ],
     "devDependencies": {
         "concurrently": "^8.2.2"

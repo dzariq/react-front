@@ -7,7 +7,7 @@ const cors = require("cors");
 const port = 3200;
 
 const app = express();
-app.use(express.static(path.join(__dirname,'/../client/build')));
+//app.use(express.static(path.join(__dirname,'/../client/build')));
 app.use(cors())
 
 var pass = encodeURIComponent("Mirz@851205");
