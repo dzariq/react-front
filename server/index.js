@@ -43,23 +43,4 @@ app.listen(port, () => {
 
 });
 
-app.get('/users', (req, res) => {
-    User.find({}).then(function (FoundItems) {
-
-        res.send(FoundItems);
-
-    })
-            .catch(function (err) {
-                console.log(err);
-            })
-
-});
-
-app.delete('/delete', (req, res) => {
-    User.deleteOne({
-        user_id: req.query.user_id
-    });
-
-    res.json("DELETED SUCCESSFULLY")
-});
 
