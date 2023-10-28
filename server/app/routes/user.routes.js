@@ -26,7 +26,6 @@ module.exports = function (app) {
 
     });
 
-    
     router.delete('/delete', (req, res) => {
         console.log(req.query.user_id)
 
