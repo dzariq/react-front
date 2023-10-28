@@ -27,11 +27,17 @@ module.exports = function (app) {
     });
 
     router.delete('/delete', (req, res) => {
-        User.deleteOne({
-            user_id: req.query.user_id
-        });
+        console.log(req.query.user_id)
 
-        res.json("DELETED SUCCESSFULLY")
+        User.deleteOne({user_id: req.query.user_id})
+                .then(function (models) {
+                    res.json("DELETED SUCCESSFULLY")
+                })
+                .catch(function (err) {
+                    console.log(err)
+
+                });
+
     });
 
     app.use(router);
