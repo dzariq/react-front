@@ -8,5 +8,4 @@ db.mongoose = mongoose;
 db.user = require("./user.model");
 db.payment = require("./payment.model");
 
-
 module.exports = db;
