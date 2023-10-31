@@ -16,7 +16,7 @@ exports.addPayment = (req, res) => {
         order_id: req.body.order_id,
         email: req.body.email,
         phone: req.body.phone,
-        details: 'test',
+        detail: 'test',
         name: req.body.name,
         amount: req.body.amount,
         hash: hash,
