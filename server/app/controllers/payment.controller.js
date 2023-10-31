@@ -5,7 +5,7 @@ const secretKey = '152-798';
 const crypto = require('crypto');
 
 exports.addPayment = (req, res) => {
-    const detail = detail;
+    const detail = 'test';
     const hmac = crypto.createHmac('sha256', secretKey);
     hmac.update(secretKey + detail + req.body.amount + req.body.order_id);
     const hash = hmac.digest('hex');
