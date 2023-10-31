@@ -1,7 +1,7 @@
 const db = require("../models");
 const Payment = db.payment;
-const formcode = '189161409304044';
-const secretKey = '26655-596';
+const formcode = '930154140675769';
+const secretKey = '152-798';
 const crypto = require('crypto');
 
 exports.addPayment = (req, res) => {
@@ -9,6 +9,7 @@ exports.addPayment = (req, res) => {
     const hmac = crypto.createHmac('sha256', secretKey);
     hmac.update(secretKey + detail + req.body.amount + req.body.order_id);
     const hash = hmac.digest('hex');
+    const url = 'https://sandbox.senangpay.my';
 
     console.log('HMAC-SHA256 Hash:', hash);
 
@@ -20,6 +21,7 @@ exports.addPayment = (req, res) => {
         name: req.body.name,
         amount: req.body.amount,
         hash: hash,
+        url: url,
         formcode: formcode
     });
 
