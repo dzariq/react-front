@@ -5,9 +5,8 @@ const secretKey = '26655-596';
 const crypto = require('crypto');
 
 exports.addPayment = (req, res) => {
-    const data = secretKey + req.body.detail + req.body.amount + req.body.order_id;
     const hmac = crypto.createHmac('sha256', secretKey);
-    hmac.update(data);
+    hmac.update(secretKey + req.body.detail + req.body.amount + req.body.order_id);
     const hash = hmac.digest('hex');
 
     console.log('HMAC-SHA256 Hash:', hash);
@@ -24,7 +23,7 @@ exports.addPayment = (req, res) => {
     });
 
     res.json(
-        {
-        url : 'https://plankton-app-g6t2l.ondigitalocean.app/payment?order_id='+req.body.order_id
-        });
+            {
+                url: 'https://plankton-app-g6t2l.ondigitalocean.app/payment?order_id' + req.body.order_id
+            });
 };
