@@ -24,6 +24,6 @@ exports.addPayment = (req, res) => {
 
     res.json(
             {
-                url: 'https://plankton-app-g6t2l.ondigitalocean.app/payment?order_id' + req.body.order_id
+                url: 'https://plankton-app-g6t2l.ondigitalocean.app/payment?order_id=' + req.body.order_id
             });
 };
