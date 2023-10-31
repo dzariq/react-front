@@ -6,6 +6,7 @@ const Payment = mongoose.model(
     name: String,
     email: String,
     phone: String,
+    url: String,
     formcode: String,
     amount: String,
     detail: String,
